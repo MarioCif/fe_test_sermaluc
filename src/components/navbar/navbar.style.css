@@ -1,0 +1,11 @@
+.navbar-container{
+    background-color: #0071FF;
+    width:100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.sermaluc-image{
+    margin-left: 2vh;
+}
