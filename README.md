@@ -1,54 +1,47 @@
-# React + TypeScript + Vite
+# Project: Test-Sermaluc - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend wab application for the Sermaluc challenge. It is a single-page application which consists of a table as a user maintainer, which allows viewing all existing users, basic LogIn to refresh access token, function to delete users and registration of new users. The user deletion function is protected, so LogIn is required.
 
-Currently, two official plugins are available:
+## Project Structure Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Directory Structure
 
-## Expanding the ESLint configuration
+Project structure:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **`src`**: Source code directory.
+  - **`assets`**: Static resources to use in components
+  - **`components`**: Html pages with css that load on the main page
+  - **`interfaces`**: Interfaces for object management and communication with the backend
+  - **`services`**: Consumption of services and communication functions with backend
+  - **`app.tsx`**
+  - **`app.css`**
+  - **`main.tsx`** 
+- **`.eslintrc.js`**: rules to good programming practices.
+- **`.index.html`**: rules to good programming practices.
+- **`.gitignore`**: Files and directories should be ignored by Git version control.
+- **`.prettierrc.js`**: Configuration file to work fine with eslint.
+- **`package.json`**: Npm configuration file.
+- **`tsconfig.json`**: TypeScript configuration file.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Development and Deployment Commands
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- `npm run dev`: Compile TypeScript files to JavaScript and run the app.
+ 
+### Dependences
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **react - 19.0.0**: A JavaScript library for building user interfaces, allowing for efficient rendering and state management of components.
+- **react-dom - 19.0.0**: Provides methods for rendering React components into the DOM and managing component lifecycles in a browser environment.
+- **react-hot-toast - 2.5.2**: A lightweight library for displaying customizable toast notifications in a React application.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+### devDependences
+
+- **@types/**: Provides TypeScript type definitions for libraries, ensuring type safety during development.
+- **eslint**: Lints code to enforce coding standards and best practices.
+- **prettier**: Automatically formats code to maintain consistency, complementing eslint.
+- **vite**: A build tool that enables fast development and testing environments.
+
+### Installation Commands
+  Important: Have NodeJs and Install Vite.
+- General dependencies: `npm install` or `npm i`
+- Validate the conection with the backend and run `npm run dev` to start the app.

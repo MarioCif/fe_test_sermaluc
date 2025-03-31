@@ -1,11 +1,8 @@
 import { useState } from "react";
 import './create-user-modal.css';
+import { NewUserModalProps } from "../../interfaces/props.interface";
 
-interface NewUserModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onRegister: (userData: { name: string; email: string; password: string; phone: string; phone2: string, citycode: string; isActive: boolean }) => void;
-}
+
 
 export const CreateUserModal = ({ isOpen, onClose, onRegister }: NewUserModalProps) => {
   const [userData, setUserData] = useState({
@@ -14,8 +11,7 @@ export const CreateUserModal = ({ isOpen, onClose, onRegister }: NewUserModalPro
     password: '',
     phone: '',
     phone2: '',
-    citycode: '',
-    isActive: false
+    citycode: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -39,6 +35,7 @@ export const CreateUserModal = ({ isOpen, onClose, onRegister }: NewUserModalPro
                   placeholder="Nombre"
                   value={userData.name}
                   onChange={(e) => setUserData({ ...userData, name: e.target.value })}
+                  required
                 />
               </div>
               <div className="input-group">
@@ -49,6 +46,7 @@ export const CreateUserModal = ({ isOpen, onClose, onRegister }: NewUserModalPro
                   placeholder="Email"
                   value={userData.email}
                   onChange={(e) => setUserData({ ...userData, email: e.target.value })}
+                  required
                 />
               </div>
             </div>
@@ -62,6 +60,7 @@ export const CreateUserModal = ({ isOpen, onClose, onRegister }: NewUserModalPro
                   placeholder="contraseña"
                   value={userData.password}
                   onChange={(e) => setUserData({ ...userData, password: e.target.value })}
+                  required
                 />
               </div>
               <div className="input-group">
@@ -72,6 +71,7 @@ export const CreateUserModal = ({ isOpen, onClose, onRegister }: NewUserModalPro
                   placeholder="Teléfono 1"
                   value={userData.phone}
                   onChange={(e) => setUserData({ ...userData, phone: e.target.value })}
+                  required
                 />
               </div>
             </div>
@@ -85,6 +85,7 @@ export const CreateUserModal = ({ isOpen, onClose, onRegister }: NewUserModalPro
                   placeholder="Teléfono 2"
                   value={userData.phone2}
                   onChange={(e) => setUserData({ ...userData, phone2: e.target.value })}
+                  required
                 />
               </div>
               <div className="input-group">
@@ -95,18 +96,9 @@ export const CreateUserModal = ({ isOpen, onClose, onRegister }: NewUserModalPro
                   placeholder="Código"
                   value={userData.citycode}
                   onChange={(e) => setUserData({ ...userData, citycode: e.target.value })}
+                  required
                 />
               </div>
-            </div>
-
-            <div className="checkbox-group">
-              <input
-                type="checkbox"
-                id="isActive"
-                checked={userData.isActive}
-                onChange={(e) => setUserData({ ...userData, isActive: e.target.checked })}
-              />
-              <label htmlFor="isActive">Activo</label>
             </div>
 
             <div className="modal-footer">

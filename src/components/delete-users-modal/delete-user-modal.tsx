@@ -1,11 +1,7 @@
+import { DeleteConfirmationModalProps } from '../../interfaces/props.interface';
 import './delete-user-modal.style.css'
 
-interface DeleteConfirmationModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    onDelete: () => void;
-    userName: string;
-}
+
 
 export const DeleteUserModal = ({
     isOpen,
